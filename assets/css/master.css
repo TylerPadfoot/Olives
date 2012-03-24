@@ -56,7 +56,6 @@ body {
 .textInput
 {
 	position: relative;
-	text:"name";
 	top: 20px;
 	border: 2px solid #808080;
 	background: #fff;
