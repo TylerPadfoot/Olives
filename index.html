@@ -21,14 +21,46 @@
 		
 		<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 		
+		
+		
 	</head>
 	<body>
- 		<div id="title_bar">Phone<strong>Gap</strong> Training App</div>
+ 		<div id="title_bar">Translink Scheduler</div>
 
 		<div id="welcome" class="view">
-		  <div class="app_button" id="map_button">Show My Location</div>
-  	      <div class="app_button" id="settings_button">Settings</div>
-  	      <div class="app_button" id="test_button">Click Me</div>
+		 <a href="addstop.html" class="add_button">Add Stop</a></br>
+			<script type="text/javascript">
+			if (window.XMLHttpRequest)
+  			{// code for IE7+, Firefox, Chrome, Opera, Safari
+ 				 xmlhttp=new XMLHttpRequest();
+  			}
+			else
+  			{// code for IE6, IE5
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+			xmlhttp.open("GET","entries.xml",false);
+			xmlhttp.send();
+			xmlDoc=xmlhttp.responseXML; 
+
+			document.write("<table border='1' align='center'>");
+var x=xmlDoc.getElementsByTagName("StopID");
+document.write("<tr><td>Name</td><td>Towards</td><td>StopID</td><td>Next Arrival</td>");
+for (i=0;i<x.length;i++)
+  { 
+  document.write("<tr><td>");
+  document.write(x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[i].getElementsByTagName("Towards")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  document.write(x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue);
+  document.write("</td><td>");
+  var time = x[i].getElementsByTagName("time")[0].childNodes[0].nodeValue;
+  document.write(time);
+  document.write("</td></tr>");
+  }
+document.write("</table>");
+</script>
+
 		</div>
 
 		<div id="map" class="view">
@@ -40,24 +72,6 @@
 		</div>
 
 		<div id="settings" class="view">
-		  <form id="settings_form">
-		    <fieldset>
-		      <legend>Map Type</legend>
-			  <input type="radio" name="map" value="roadmap" checked>Road Map<br/>
-		      <input type="radio" name="map" value="satellite">Satellite<br/>
-		      <input type="radio" name="map" value="terrain">Terrain<br/>
-		      <input type="radio" name="map" value="hybrid">Hybrid<br/>
-		    </fieldset>
-		    <fieldset>
-		      <legend>Zoom Level</legend>
-  		      <input type="radio" name="zoom" value="10">Super Far<br/>
-  		      <input type="radio" name="zoom" value="12">Far<br/>
-  		      <input type="radio" name="zoom" value="15" checked>Normal<br/>
-  		      <input type="radio" name="zoom" value="18">Close<br/>
-  		      <input type="radio" name="zoom" value="20">Super Close<br/>
-  		     </fieldset>
-		      <button id="save_button">Save</button>
-	      </form>
 		</div>
 
 	</body>

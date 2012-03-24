@@ -1,5 +1,5 @@
 body {
-  background: #fff;
+  background: #ffffff;
   background: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#C8C8C8), color-stop(0.47, white), to(#C8C8C8));
   margin: 0;
   font: 18px Helvetica;
@@ -9,6 +9,7 @@ body {
 #title_bar {
   /* need a position set to something for z-index to take effect */
   position: relative;
+  font:22px Arial;
   z-index: 1;
   background: #ccc;
   background: -webkit-gradient(linear, 0 0, 0 70%, from(#fff), to(#ccc));
@@ -22,27 +23,49 @@ body {
   -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.3);
   box-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
-
-.app_button, button {
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  display: inline-block;
-  padding: 0 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  width: 200px;
-  background:#F7941E;
-  background: -webkit-gradient(linear, 0 0, 0 70%, from(#F7941E), to(#D37F18));
-  background: linear-gradient(#F7941E, #D37F18 70%);
-  border: 1px solid #C97917;
-  font-size: 18px;
-  font-weight: 200;
-  text-shadow: 0 -1px 0 #7E4B0D;
-  height: 40px;
-  line-height: 40px;
-  color:#fff;
-  text-align: center;
+.add_button, button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}.add_button:hover {
+	cursor: pointer;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}.add_button:active {
+	position:relative;
+	top:1px;
 }
+.textInput
+{
+	position: relative;
+	text:"name";
+	top: 20px;
+	border: 2px solid #808080;
+	background: #fff;
+	color: #ffffff;
+	font-size: 1.1em;
+}
+</style>
+
+
 
 #back_button {
   background: grey;

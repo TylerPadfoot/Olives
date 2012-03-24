@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Entries>
+	<StopID>
+		<ID>51491</ID>
+		<Name>Crown</Name>
+    	<Towards>Brentwood</Towards>
+    	<time>
+    		1014
+    	</time>
+	</StopID>
+
+<StopID>
+	<ID>1</ID>
+	<Name>C</Name>
+	<Towards>UBC</Towards>
+</StopID>
+</Entries>
